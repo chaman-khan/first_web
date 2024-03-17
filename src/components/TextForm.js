@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
-  const [text, setText] = useState("Enter Text here");
+  const [text, setText] = useState("");
   const handleUpClick = () => {
     setText(text.toUpperCase());
     props.showAlert("Converted to Upper case", "success");
@@ -98,7 +98,7 @@ export default function TextForm(props) {
           {!text.trim() ? 0 : text.trim().split(/\s+/).length} words &{" "}
           {text.length} characters
           <h2>Preview</h2>
-          <p>{text}</p>
+          <p>{text ? text : "Write some thing above to preview!..."}</p>
         </div>
       </div>
     </>
